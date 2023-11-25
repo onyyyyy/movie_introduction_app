@@ -2,8 +2,9 @@
 
 [x] react-router-dom
 [] node-fetch@2 --save
-[] styled-components
-[] styled-reset
+[x] styled-components
+[x] styled-reset
+[x] font-awesome
 [] react-helmet
 [] react-hook-form
 [] swiper
