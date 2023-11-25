@@ -1,3 +1,3 @@
 export const Search = () => {
-  return <div></div>;
+  return <div>서치</div>;
 };

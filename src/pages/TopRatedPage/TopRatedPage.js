@@ -1,3 +1,3 @@
 export const TopRatedPage = () => {
-  return <div></div>;
+  return <div>랭킹</div>;
 };

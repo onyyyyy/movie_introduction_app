@@ -1,3 +1,3 @@
 export const Detail = () => {
-  return <div></div>;
+  return <div>디테일</div>;
 };

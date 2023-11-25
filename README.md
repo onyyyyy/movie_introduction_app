@@ -1,6 +1,7 @@
 ## 설치항목
 
-[] react-router-dom
+[x] react-router-dom
+[] node-fetch@2 --save
 [] styled-components
 [] styled-reset
 [] react-helmet
