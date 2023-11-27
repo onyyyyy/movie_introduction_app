@@ -10,7 +10,7 @@ const HeaderWrap = styled.header`
 
 const Sheader = styled.div`
   width: 100%;
-  padding: 20px 100px;
+  padding: 20px 5%;
   background-color: lightgray;
   display: flex;
   justify-content: space-between;
@@ -40,7 +40,10 @@ const Gnb = styled.ul`
   }
 `;
 
-const SideIcon = styled.div``;
+const SideIcon = styled.div`
+  font-size: ${baseFontSize.baseSize};
+  font-weight: 500;
+`;
 export const Header = () => {
   return (
     <HeaderWrap>

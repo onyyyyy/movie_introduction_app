@@ -1,22 +1,22 @@
 ## 설치항목
 
 [x] react-router-dom
-[] node-fetch@2 --save
+[x] node-fetch@2 --save
 [x] styled-components
 [x] styled-reset
-[x] font-awesome
-[] react-helmet
+[] font-awesome
+[x] react-helmet-async
 [] react-hook-form
 [] swiper
 
 ## TODO
 
-[] component 생성
-[] router 연결
+[x] component 생성
+[x] router 연결
 [] api 기본세팅
-[] header 디자인
-[] footer 디자인
-[] loading page 디자인
+[x] header 디자인
+[x] footer 디자인
+[x] loading page 디자인
 [] Home ui 및 전체 구성
 [] Detail ui 및 전체 구성
 [] Genre ui 및 전체 구성
