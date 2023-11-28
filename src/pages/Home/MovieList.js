@@ -4,13 +4,14 @@ import { Swiper, SwiperSlide } from "swiper/react";
 // import { Virtual } from "swiper/modules";
 import { Link } from "react-router-dom";
 import "swiper/css";
+import { baseFontSize } from "../../style/GlobalStyled";
 // import "swiper/css/virtual";
 
 const Wrap = styled.section`
   padding: 100px 5%;
 `;
 const Title = styled.h3`
-  font-size: 50px;
+  font-size: ${baseFontSize.titleSize};
   font-weight: 700;
   margin-bottom: 50px;
 `;
@@ -22,7 +23,7 @@ const Poster = styled.div`
 `;
 const MovieTitle = styled.h4`
   margin-top: 20px;
-  font-size: 18px;
+  font-size: ${baseFontSize.movieTitleSize};
 `;
 
 const params = {

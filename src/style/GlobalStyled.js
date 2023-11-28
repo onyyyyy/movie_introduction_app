@@ -8,6 +8,8 @@ export const mainColor = {
 
 export const baseFontSize = {
   baseSize: "16px",
+  movieTitleSize: "18px",
+  titleSize: "50px",
 };
 
 export const GlobalStyled = createGlobalStyle`

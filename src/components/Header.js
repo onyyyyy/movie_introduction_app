@@ -24,7 +24,7 @@ const MenuWrap = styled.div`
 
 const Logo = styled.div`
   font-size: 26px;
-  margin-right: 150px;
+  margin-right: 120px;
   font-weight: 700;
   a {
     color: ${mainColor.pointColor};
