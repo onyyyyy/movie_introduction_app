@@ -4,6 +4,7 @@ const baseurl = "https://api.themoviedb.org/3/";
 const nowPlayingUrl = baseurl + "movie/now_playing?language=ko-KR";
 const topRatedUrl = baseurl + "movie/top_rated?language=ko-KR";
 const upcomingUrl = baseurl + "movie/upcoming?language=ko-KR";
+const genreListUrl = baseurl + "genre/movie/list?language=ko";
 
 const options = {
   method: "GET",
@@ -22,3 +23,6 @@ export const topRated = () =>
 
 export const upComing = () =>
   fetch(upcomingUrl, options).then((res) => res.json());
+
+export const genreList = () =>
+  fetch(genreListUrl, options).then((res) => res.json());

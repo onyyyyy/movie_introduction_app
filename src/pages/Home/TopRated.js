@@ -37,10 +37,10 @@ const Con = styled.div`
       center / cover;
   } */
 
-  &:nth-child(2) {
+  /* &:nth-child(2) {
     background: url(${IMG_URL}/w500/${(props) => props.$bgUrl2}) no-repeat
       center / cover;
-  }
+  } */
 
   /* &:last-child {
     background: url(${IMG_URL}/w500/${(props) => props.$bgUrl3}) no-repeat

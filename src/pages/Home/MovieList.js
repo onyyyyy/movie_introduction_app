@@ -1,8 +1,10 @@
 import styled from "styled-components";
 import { IMG_URL } from "../../constants";
 import { Swiper, SwiperSlide } from "swiper/react";
+// import { Virtual } from "swiper/modules";
 import { Link } from "react-router-dom";
 import "swiper/css";
+// import "swiper/css/virtual";
 
 const Wrap = styled.section`
   padding: 100px 5%;
@@ -13,7 +15,7 @@ const Title = styled.h3`
   margin-bottom: 50px;
 `;
 const Poster = styled.div`
-  height: 300px;
+  height: 400px;
   background-color: aliceblue;
   background: url(${IMG_URL}/w500/${(props) => props.$bgUrl}) no-repeat center /
     cover;
@@ -25,7 +27,8 @@ const MovieTitle = styled.h4`
 
 const params = {
   spaceBetween: 20,
-  slidesPerView: 5.5,
+  slidesPerView: 4.5,
+  // modules: { Virtual },
 };
 
 export const MovieList = ({ titleName, movieListData }) => {
