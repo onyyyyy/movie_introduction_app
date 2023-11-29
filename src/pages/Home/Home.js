@@ -6,6 +6,7 @@ import { TopRated } from "./TopRated";
 import { PageTitle } from "../../components/PageTitle";
 import { MovieList } from "./MovieList";
 import { GenreList } from "./GenreList";
+import { Layout } from "../../components/Layout";
 
 export const Home = () => {
   const [nowPlayingData, setNowPlayingData] = useState();
@@ -54,16 +55,18 @@ export const Home = () => {
             <>
               <PageTitle titleName={"Home"} />
               <Banner bannerData={nowPlayingData[0]} />
-              <TopRated topData={topRatedData} />
-              <MovieList
-                titleName={"현재 상영작"}
-                movieListData={nowPlayingData}
-              />
-              <MovieList
-                titleName={"상영 예정작"}
-                movieListData={upComingData}
-              />
-              <GenreList genreNameData={genreListData} />
+              <Layout>
+                <TopRated topData={topRatedData} />
+                <MovieList
+                  titleName={"현재 상영작"}
+                  movieListData={nowPlayingData}
+                />
+                <MovieList
+                  titleName={"상영 예정작"}
+                  movieListData={upComingData}
+                />
+                <GenreList genreNameData={genreListData} />
+              </Layout>
             </>
           )}
         </>

@@ -11,10 +11,14 @@ const HeaderWrap = styled.header`
 const Sheader = styled.div`
   width: 100%;
   padding: 20px 5%;
-  background-color: lightgray;
+  /* background-color: lightgray; */
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
 `;
 
 const MenuWrap = styled.div`

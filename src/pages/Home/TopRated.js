@@ -4,11 +4,12 @@ import styled from "styled-components";
 import { IMG_URL } from "../../constants";
 
 const Wrap = styled.div`
-  padding: 100px 5%;
+  /* padding: 100px 5%; */
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin-bottom: 100px;
 `;
 const Title = styled.h3`
   font-size: 80px;

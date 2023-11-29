@@ -8,7 +8,8 @@ import { baseFontSize } from "../../style/GlobalStyled";
 // import "swiper/css/virtual";
 
 const Wrap = styled.section`
-  padding: 100px 5%;
+  /* padding: 100px 5%; */
+  margin-bottom: 100px;
 `;
 const Title = styled.h3`
   font-size: ${baseFontSize.titleSize};

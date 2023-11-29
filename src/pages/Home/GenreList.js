@@ -5,8 +5,11 @@ import "swiper/css";
 import { baseFontSize, mainColor } from "../../style/GlobalStyled";
 
 const Wrap = styled.div`
-  height: 300px;
+  height: 200px;
   position: relative;
+  /* display: flex;
+  align-items: center;
+  justify-content: space-between; */
 `;
 
 const Con = styled.div`
@@ -52,6 +55,7 @@ export const GenreList = ({ genreNameData }) => {
           </SwiperSlide>
         ))}
       </Swiper>
+
       <Box>
         <h3>
           Genre
