@@ -33,6 +33,8 @@ const Con = styled.div`
   width: 100%;
   height: 500px;
   background-color: lightcoral;
+  background: url(${IMG_URL}/w500/${(props) => props.$bgUrl}) no-repeat center /
+    cover;
   /* &:first-child {
     background: url(${IMG_URL}/w500/${(props) => props.$bgUrl1}) no-repeat
       center / cover;
@@ -61,16 +63,22 @@ export const TopRated = ({ topData }) => {
       <Title>Top Rated</Title>
       <Container>
         <ConWarp>
-          <Con></Con>
-          <h4>{topData[0].title}</h4>
+          <Link>
+            <Con $bgUrl={topData[0].poster_path}></Con>
+            <h4>{topData[0].title}</h4>
+          </Link>
         </ConWarp>
         <ConWarp>
-          <Con></Con>
-          <h4>{topData[1].title}</h4>
+          <Link>
+            <Con $bgUrl={topData[1].poster_path}></Con>
+            <h4>{topData[1].title}</h4>
+          </Link>
         </ConWarp>
         <ConWarp>
-          <Con></Con>
-          <h4>{topData[2].title}</h4>
+          <Link>
+            <Con $bgUrl={topData[2].poster_path}></Con>
+            <h4>{topData[2].title}</h4>
+          </Link>
         </ConWarp>
       </Container>
       <ViewBtn>

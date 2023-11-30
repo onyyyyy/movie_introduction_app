@@ -5,6 +5,8 @@ const nowPlayingUrl = baseurl + "movie/now_playing?language=ko-KR";
 const topRatedUrl = baseurl + "movie/top_rated?language=ko-KR";
 const upcomingUrl = baseurl + "movie/upcoming?language=ko-KR";
 const genreListUrl = baseurl + "genre/movie/list?language=ko";
+const dayTrendUrl = baseurl + "trending/movie/day?language=ko-KR";
+const weekTrendUrl = baseurl + "trending/movie/week?language=ko-KR";
 
 const options = {
   method: "GET",
@@ -26,3 +28,9 @@ export const upComing = () =>
 
 export const genreList = () =>
   fetch(genreListUrl, options).then((res) => res.json());
+
+export const dayTrendList = () =>
+  fetch(dayTrendUrl, options).then((res) => res.json());
+
+export const weekTrendList = () =>
+  fetch(weekTrendUrl, options).then((res) => res.json());

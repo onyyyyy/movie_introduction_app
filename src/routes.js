@@ -1,6 +1,6 @@
 export const routes = {
   Home: "/",
-  Detail: "/detail/:id",
+  Detail: "/detail",
   Search: "/search",
   Genre: "/genre",
   TopRatedPage: "/toprated",
