@@ -57,11 +57,17 @@ export const Header = () => {
             <Link to={routes.Home}>OnMOVIE</Link>
           </Logo>
           <Gnb>
-            <Link to={routes.Genre}>
-              <li>장르별</li>
+            <Link to={routes.Trend}>
+              <li>Trend</li>
             </Link>
             <Link to={routes.TopRatedPage}>
-              <li>랭킹영화</li>
+              <li>Top Rated</li>
+            </Link>
+            <Link to={""}>
+              <li>현재 상영작</li>
+            </Link>
+            <Link to={""}>
+              <li>상영 예정작</li>
             </Link>
           </Gnb>
         </MenuWrap>
