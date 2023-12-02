@@ -3,16 +3,15 @@ import { dayTrendList, weekTrendList } from "../../api";
 import styled from "styled-components";
 import { TrendLayout } from "./TrendLayout";
 import { Loading } from "../../components/Loading";
-import { Layout } from "../../components/Layout";
 
 const Wrap = styled.div`
-  padding: 150px 5%;
+  padding: 100px 0;
 `;
-const Title = styled.h3`
-  font-size: 100px;
-  font-weight: 900;
-  text-align: center;
-`;
+// const Title = styled.h3`
+//   font-size: 100px;
+//   font-weight: 900;
+//   text-align: center;
+// `;
 
 export const Trend = () => {
   const [dayTrendData, setDayTrendData] = useState();
@@ -43,9 +42,15 @@ export const Trend = () => {
         <Loading />
       ) : (
         <Wrap>
-          <Title>Trend</Title>
-          <TrendLayout titleName={"DAY"} trendListData={dayTrendData} />
-          <TrendLayout titleName={"WEEK"} trendListData={weekTrendData} />
+          {/* <Title>인기 영화</Title> */}
+          <TrendLayout
+            titleName={"오늘의 인기 영화"}
+            trendListData={dayTrendData}
+          />
+          <TrendLayout
+            titleName={"금주의 인기 영화"}
+            trendListData={weekTrendData}
+          />
         </Wrap>
       )}
     </>

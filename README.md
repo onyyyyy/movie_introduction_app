@@ -19,7 +19,6 @@
 [x] loading page 디자인
 [] Home ui 및 전체 구성
 [] Detail ui 및 전체 구성
-[] Genre ui 및 전체 구성
 [] Search ui 및 전체 구성
 [] TopRatedPage ui 및 전체 구성
 [] PageNotFound ui 및 전체 구성

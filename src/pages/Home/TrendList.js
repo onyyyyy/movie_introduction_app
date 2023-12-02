@@ -4,6 +4,8 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import { baseFontSize, mainColor } from "../../style/GlobalStyled";
 import { IMG_URL } from "../../constants";
+import { Autoplay, Pagination, Navigation } from "swiper/modules";
+import { routes } from "../../routes";
 
 const Wrap = styled.div`
   height: 300px;
@@ -43,6 +45,14 @@ const Box = styled.div`
 const params = {
   spaceBetween: 30,
   slidesPerView: 5.5,
+  // centeredSlides: true,
+  loop: true,
+  autoplay: {
+    delay: 1800,
+    disableOnInteraction: false,
+  },
+  navigation: true,
+  modules: [Autoplay, Pagination, Navigation],
 };
 
 export const TrendList = ({ trendListData, titleName }) => {
@@ -51,7 +61,7 @@ export const TrendList = ({ trendListData, titleName }) => {
       <Swiper {...params}>
         {trendListData.map((data) => (
           <SwiperSlide key={data.id}>
-            <Link>
+            <Link to={`/detail/${data.id}`}>
               <Con $bgUrl={data.poster_path}></Con>
             </Link>
           </SwiperSlide>

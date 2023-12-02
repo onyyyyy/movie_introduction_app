@@ -59,7 +59,7 @@ export const Home = () => {
     })();
   }, []);
 
-  // console.log(nowPlayingData);
+  console.log(nowPlayingData);
   // console.log(topRatedData);
   // console.log(upComingData);
   // console.log(genreListData);
@@ -88,11 +88,11 @@ export const Home = () => {
                 />
                 {/* <GenreList genreNameData={genreListData} /> */}
                 <TrendList
-                  titleName={"A Day Trend"}
+                  titleName={"오늘의 인기 영화"}
                   trendListData={dayTrendData}
                 />
                 <TrendList
-                  titleName={"A Week Trend"}
+                  titleName={"금주의 인기 영화"}
                   trendListData={weekTrendData}
                 />
               </Layout>

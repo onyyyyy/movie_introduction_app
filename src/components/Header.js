@@ -58,10 +58,7 @@ export const Header = () => {
           </Logo>
           <Gnb>
             <Link to={routes.Trend}>
-              <li>Trend</li>
-            </Link>
-            <Link to={routes.TopRatedPage}>
-              <li>Top Rated</li>
+              <li>인기영화</li>
             </Link>
             <Link to={""}>
               <li>현재 상영작</li>

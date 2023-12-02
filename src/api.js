@@ -34,3 +34,8 @@ export const dayTrendList = () =>
 
 export const weekTrendList = () =>
   fetch(weekTrendUrl, options).then((res) => res.json());
+
+export const movieDetail = (id) => {
+  const detailUrl = baseurl + `movie/${id}?language=ko-KR`;
+  return fetch(detailUrl, options).then((res) => res.json());
+};

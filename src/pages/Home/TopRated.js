@@ -60,7 +60,7 @@ const ViewBtn = styled.button`
 export const TopRated = ({ topData }) => {
   return (
     <Wrap>
-      <Title>Top Rated</Title>
+      <Title>영화 랭킹</Title>
       <Container>
         <ConWarp>
           <Link>

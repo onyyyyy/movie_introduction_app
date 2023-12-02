@@ -10,7 +10,7 @@ import { Layout } from "../../components/Layout";
 import { baseFontSize } from "../../style/GlobalStyled";
 
 const Wrap = styled.div`
-  margin-bottom: 100px;
+  margin-bottom: 80px;
 `;
 
 const TitleWrap = styled.div`
@@ -20,7 +20,7 @@ const TitleWrap = styled.div`
 `;
 
 const Title = styled.div`
-  font-size: 60px;
+  font-size: ${baseFontSize.titleSize};
   font-weight: 900;
   margin-right: 50px;
 `;
@@ -44,8 +44,8 @@ const BtnWrap = styled.button`
 `;
 
 const Con = styled.div`
-  width: 500px;
-  height: 700px;
+  width: 300px;
+  height: 400px;
   background: url(${IMG_URL}/w500/${(props) => props.$bgUrl}) no-repeat center /
     cover;
 `;
@@ -54,7 +54,7 @@ const params = {
   effect: "coverflow",
   grabCursor: true,
   centeredSlides: true,
-  slidesPerView: 3,
+  slidesPerView: 5,
   coverflowEffect: {
     rotate: 70,
     stretch: 0,
@@ -71,7 +71,7 @@ export const TrendLayout = ({ titleName, trendListData }) => {
     <Layout>
       <Wrap>
         <TitleWrap>
-          <Title>{titleName} TREND</Title>
+          <Title>{titleName}</Title>
           <BtnWrap>
             <Link>+ 더 보기</Link>
           </BtnWrap>
