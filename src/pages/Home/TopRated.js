@@ -62,27 +62,19 @@ export const TopRated = ({ topData }) => {
     <Wrap>
       <Title>영화 랭킹</Title>
       <Container>
-        <ConWarp>
-          <Link>
-            <Con $bgUrl={topData[0].poster_path}></Con>
-            <h4>{topData[0].title}</h4>
-          </Link>
-        </ConWarp>
-        <ConWarp>
-          <Link>
-            <Con $bgUrl={topData[1].poster_path}></Con>
-            <h4>{topData[1].title}</h4>
-          </Link>
-        </ConWarp>
-        <ConWarp>
-          <Link>
-            <Con $bgUrl={topData[2].poster_path}></Con>
-            <h4>{topData[2].title}</h4>
-          </Link>
-        </ConWarp>
+        {topData
+          .map((data) => (
+            <ConWarp key={data.id}>
+              <Link to={`/detail/${data.id}`}>
+                <Con $bgUrl={data.poster_path}></Con>
+                <h4>{data.title}</h4>
+              </Link>
+            </ConWarp>
+          ))
+          .slice(0, 3)}
       </Container>
       <ViewBtn>
-        <Link to={routes.TopRatedPage}>View More +</Link>
+        <Link to={routes.topRatedPage}>View More +</Link>
       </ViewBtn>
     </Wrap>
   );

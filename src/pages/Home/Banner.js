@@ -1,6 +1,9 @@
 import styled from "styled-components";
 import { IMG_URL } from "../../constants";
 import { useForm } from "react-hook-form";
+import { ErrorMessage } from "../../components/ErrorMessage";
+import { movieSearch } from "../../api";
+import { useState } from "react";
 
 const MainBanner = styled.div`
   height: 80vh;
@@ -38,6 +41,7 @@ const Input = styled.input`
   all: unset;
   width: 100%;
   height: 100%;
+  color: #333;
 `;
 
 export const Banner = ({ bannerData }) => {
@@ -49,8 +53,20 @@ export const Banner = ({ bannerData }) => {
     mode: "onSubmit",
   });
 
-  const SearchHandler = (data) => {
+  const [word, setWord] = useState();
+
+  const SearchHandler = async (data) => {
     console.log(data);
+    const { search: keyword } = data;
+
+    try {
+      const { results } = await movieSearch(keyword);
+      setWord(results);
+    } catch (error) {
+      console.log("Error" + error);
+    }
+
+    console.log(word);
   };
   return (
     <MainBanner $bgUrl={bannerData.backdrop_path}>
@@ -58,11 +74,16 @@ export const Banner = ({ bannerData }) => {
       <Form onSubmit={handleSubmit(SearchHandler)}>
         <Input
           {...register("search", {
-            required: "검색어를 입력해주세요",
+            required: "검색어를 입력해주세요!",
+            minLength: {
+              value: 1,
+              message: "한 글자 이상 입력해주세요!",
+            },
           })}
           type="text"
           placeholder="어떤 영화를 찾으시나요?"
         />
+        <ErrorMessage message={errors?.password?.message} />
       </Form>
     </MainBanner>
   );

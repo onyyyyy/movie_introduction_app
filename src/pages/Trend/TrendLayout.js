@@ -81,7 +81,7 @@ export const TrendLayout = ({ titleName, trendListData }) => {
           {trendListData
             .map((data) => (
               <SwiperSlide key={data.id}>
-                <Link>
+                <Link to={`/detail/${data.id}`}>
                   <Con $bgUrl={data.poster_path}></Con>
                 </Link>
               </SwiperSlide>

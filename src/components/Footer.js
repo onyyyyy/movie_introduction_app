@@ -9,5 +9,5 @@ const Container = styled.footer`
 `;
 
 export const Footer = () => {
-  return <Container>&copy; 2023 onxezy 1123</Container>;
+  return <Container>&copy; 2023 onxezy</Container>;
 };

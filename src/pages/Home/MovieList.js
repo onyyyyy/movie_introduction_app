@@ -40,7 +40,7 @@ export const MovieList = ({ titleName, movieListData }) => {
       <Swiper {...params}>
         {movieListData.map((data) => (
           <SwiperSlide key={data.id}>
-            <Link>
+            <Link to={`/detail/${data.id}`}>
               <Poster $bgUrl={data.poster_path} />
               <MovieTitle>{data.title}</MovieTitle>
             </Link>

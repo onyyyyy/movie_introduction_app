@@ -33,6 +33,7 @@ const Title = styled.h3`
 const TagLine = styled.h4`
   font-size: 22px;
   font-weight: 600;
+  line-height: 24px;
   margin-bottom: 40px;
 `;
 

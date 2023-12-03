@@ -54,10 +54,10 @@ export const Header = () => {
       <Sheader>
         <MenuWrap>
           <Logo>
-            <Link to={routes.Home}>OnMOVIE</Link>
+            <Link to={routes.home}>OnMOVIE</Link>
           </Logo>
           <Gnb>
-            <Link to={routes.Trend}>
+            <Link to={routes.trend}>
               <li>인기영화</li>
             </Link>
             <Link to={""}>
@@ -70,7 +70,7 @@ export const Header = () => {
         </MenuWrap>
 
         <SideIcon>
-          <Link to={routes.Search}>검색</Link>
+          <Link to={routes.search}>검색</Link>
         </SideIcon>
       </Sheader>
     </HeaderWrap>
