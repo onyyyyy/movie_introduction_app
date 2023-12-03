@@ -8,6 +8,7 @@ import { TopRatedPage } from "./pages/topRatedPage/TopRatedPage";
 import { Header } from "./components/Header";
 import { Footer } from "./components/Footer";
 import { Trend } from "./pages/trend/Trend";
+import { List } from "./pages/list/List";
 
 const Router = () => {
   return (
