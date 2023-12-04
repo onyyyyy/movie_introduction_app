@@ -4,6 +4,7 @@ import styled from "styled-components";
 import { IMG_URL } from "../../constants";
 import { Loading } from "../../components/Loading";
 import { Link } from "react-router-dom";
+import { useScrollTop } from "../../lib/useScrollTop";
 
 const Wrap = styled.div`
   padding: 100px 20%;
@@ -58,6 +59,7 @@ export const TopRatedPage = () => {
 
   const [topRatedList, setTopRatedList] = useState();
   const [isLoading, setLoading] = useState(true);
+  useScrollTop();
 
   useEffect(() => {
     (async () => {

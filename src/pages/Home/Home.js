@@ -14,6 +14,7 @@ import { MovieList } from "./MovieList";
 // import { GenreList } from "./GenreList";
 import { Layout } from "../../components/Layout";
 import { TrendList } from "./TrendList";
+import { useScrollTop } from "../../lib/useScrollTop";
 
 export const Home = () => {
   const [nowPlayingData, setNowPlayingData] = useState();
@@ -23,6 +24,7 @@ export const Home = () => {
   const [dayTrendData, setDayTrendData] = useState();
   const [weekTrendData, setWeekTrendData] = useState();
   const [isLoading, setLoading] = useState(true);
+  useScrollTop();
 
   useEffect(() => {
     (async () => {

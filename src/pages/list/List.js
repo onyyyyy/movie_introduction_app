@@ -3,6 +3,7 @@ import { baseFontSize } from "../../style/GlobalStyled";
 import { IMG_URL } from "../../constants";
 import { Link, useLocation } from "react-router-dom";
 import { Layout } from "../../components/Layout";
+import { useScrollTop } from "../../lib/useScrollTop";
 
 const Wrap = styled.div`
   padding: 100px 5%;
@@ -37,8 +38,9 @@ const Bg = styled.div`
 `;
 
 export const List = () => {
+  useScrollTop();
   const data = useLocation();
-  console.log(data);
+  // console.log(data);
 
   return (
     <Layout>

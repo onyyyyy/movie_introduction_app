@@ -5,6 +5,7 @@ import { movieDetail } from "../../api";
 import { baseFontSize } from "../../style/GlobalStyled";
 import { Loading } from "../../components/Loading";
 import { IMG_URL } from "../../constants";
+import { useScrollTop } from "../../lib/useScrollTop";
 
 const Wrap = styled.div`
   display: flex;
@@ -89,9 +90,9 @@ export const Detail = () => {
   const { id } = useParams();
   // console.log(id);
   // console.log(data);
-
   const [movieData, setMovieData] = useState();
   const [isLoading, setIsLoading] = useState(true);
+  useScrollTop();
   useEffect(() => {
     (async () => {
       try {

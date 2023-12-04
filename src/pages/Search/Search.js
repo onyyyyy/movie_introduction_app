@@ -5,6 +5,7 @@ import { movieSearch } from "../../api";
 import { baseFontSize } from "../../style/GlobalStyled";
 import { IMG_URL } from "../../constants";
 import { Layout } from "../../components/Layout";
+import { useScrollTop } from "../../lib/useScrollTop";
 
 const Wrap = styled.div`
   padding: 100px 5%;
@@ -71,6 +72,7 @@ const MoivieTitle = styled.div`
 `;
 
 export const Search = () => {
+  useScrollTop();
   const { register, handleSubmit } = useForm({
     mode: "onSubmit",
   });

@@ -3,6 +3,7 @@ import { dayTrendList, weekTrendList } from "../../api";
 import styled from "styled-components";
 import { TrendLayout } from "./TrendLayout";
 import { Loading } from "../../components/Loading";
+import { useScrollTop } from "../../lib/useScrollTop";
 
 const Wrap = styled.div`
   padding: 100px 0;
@@ -17,6 +18,7 @@ export const Trend = () => {
   const [dayTrendData, setDayTrendData] = useState();
   const [weekTrendData, setWeekTrendData] = useState();
   const [isLoading, setIsLoading] = useState(true);
+  useScrollTop();
   useEffect(() => {
     (async () => {
       try {
