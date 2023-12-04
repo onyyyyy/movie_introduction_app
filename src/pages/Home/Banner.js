@@ -10,6 +10,9 @@ const MainBanner = styled.div`
   background: url(${IMG_URL}/original/${(props) => props.$bgUrl}) no-repeat
     center / cover;
   position: relative;
+  @media screen and (max-width: 450px) {
+    height: 60vh;
+  }
 `;
 const BgBlack = styled.div`
   width: 100%;
@@ -36,6 +39,9 @@ const Form = styled.form`
   justify-content: center;
   align-items: center;
   background-color: white;
+  @media screen and (max-width: 450px) {
+    width: 90%;
+  }
 `;
 const Input = styled.input`
   all: unset;

@@ -88,11 +88,11 @@ export const Home = () => {
                 />
                 {/* <GenreList genreNameData={genreListData} /> */}
                 <TrendList
-                  titleName={"오늘의 인기 영화"}
+                  titleName={"오늘의 트렌드"}
                   trendListData={dayTrendData}
                 />
                 <TrendList
-                  titleName={"금주의 인기 영화"}
+                  titleName={"금주의 트렌드"}
                   trendListData={weekTrendData}
                 />
               </Layout>

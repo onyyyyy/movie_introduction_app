@@ -12,16 +12,24 @@ const Wrap = styled.div`
   padding: 200px 20%;
   justify-content: space-between;
   align-items: center;
+  @media screen and (max-width: 450px) {
+    display: block;
+    padding: 100px 10%;
+  }
 `;
 const Poster = styled.div`
-  width: 45%;
+  width: 100%;
   height: 500px;
   /* background-color: lightblue; */
   background: url(${IMG_URL}/w500/${(props) => props.$bg}) no-repeat center /
     cover;
+
+  @media screen and (max-width: 450px) {
+    margin: 30px 0;
+  }
 `;
 const ConWrap = styled.div`
-  width: 45%;
+  width: 100%;
 `;
 
 const TopWrap = styled.div``;
@@ -29,12 +37,19 @@ const Title = styled.h3`
   font-size: ${baseFontSize.titleSize};
   font-weight: 600;
   margin-bottom: 30px;
+  @media screen and (max-width: 450px) {
+    font-size: 30px;
+    margin-bottom: 20px;
+  }
 `;
 const TagLine = styled.h4`
   font-size: 22px;
   font-weight: 600;
   line-height: 24px;
   margin-bottom: 40px;
+  @media screen and (max-width: 450px) {
+    font-size: 18px;
+  }
 `;
 
 const MidWrap = styled.div`
@@ -51,12 +66,18 @@ const Grade = styled.div`
   color: #333;
   text-align: center;
   margin: 10px;
+  @media screen and (max-width: 450px) {
+    line-height: 28px;
+  }
 `;
 const Release = styled.div``;
 const Genre = styled.div``;
 const Summary = styled.p`
   font-size: 18px;
   line-height: 24px;
+  @media screen and (max-width: 450px) {
+    font-size: 16px;
+  }
 `;
 const Line = styled.div`
   width: 100%;

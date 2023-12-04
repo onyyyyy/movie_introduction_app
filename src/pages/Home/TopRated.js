@@ -10,16 +10,28 @@ const Wrap = styled.div`
   justify-content: center;
   align-items: center;
   margin-bottom: 100px;
+  @media screen and (max-width: 450px) {
+    margin-bottom: 80px;
+  }
 `;
 const Title = styled.h3`
   font-size: 80px;
   font-weight: 900;
+  @media screen and (max-width: 450px) {
+    font-size: 50px;
+  }
 `;
 const Container = styled.div`
   width: 100%;
   display: flex;
   justify-content: space-between;
   margin: 80px 0 50px 0;
+  @media screen and (max-width: 450px) {
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+    margin-bottom: 30px;
+  }
 `;
 const ConWarp = styled.div`
   width: 30%;
@@ -28,13 +40,24 @@ const ConWarp = styled.div`
     font-size: 30px;
     font-weight: 600;
   }
+  @media screen and (max-width: 450px) {
+    width: 90%;
+    margin-bottom: 30px;
+    h4 {
+      margin-top: 10px;
+      font-size: 20px;
+    }
+  }
 `;
 const Con = styled.div`
   width: 100%;
   height: 500px;
-  background-color: lightcoral;
+  /* background-color: lightcoral; */
   background: url(${IMG_URL}/w500/${(props) => props.$bgUrl}) no-repeat center /
     cover;
+  @media screen and (max-width: 450px) {
+    height: 400px;
+  }
   /* &:first-child {
     background: url(${IMG_URL}/w500/${(props) => props.$bgUrl1}) no-repeat
       center / cover;

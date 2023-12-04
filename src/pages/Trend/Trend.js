@@ -44,11 +44,11 @@ export const Trend = () => {
         <Wrap>
           {/* <Title>인기 영화</Title> */}
           <TrendLayout
-            titleName={"오늘의 인기 영화"}
+            titleName={"오늘의 트렌드"}
             trendListData={dayTrendData}
           />
           <TrendLayout
-            titleName={"금주의 인기 영화"}
+            titleName={"금주의 트렌드"}
             trendListData={weekTrendData}
           />
         </Wrap>

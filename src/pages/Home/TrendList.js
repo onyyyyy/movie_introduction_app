@@ -5,7 +5,6 @@ import "swiper/css";
 import { baseFontSize, mainColor } from "../../style/GlobalStyled";
 import { IMG_URL } from "../../constants";
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
-import { routes } from "../../routes";
 
 const Wrap = styled.div`
   height: 300px;
@@ -14,6 +13,9 @@ const Wrap = styled.div`
   /* display: flex;
   align-items: center;
   justify-content: space-between; */
+  @media screen and (max-width: 450px) {
+    height: 200px;
+  }
 `;
 
 const Con = styled.div`
@@ -24,11 +26,17 @@ const Con = styled.div`
   /* background-color: lightgray; */
   background: url(${IMG_URL}/w500/${(props) => props.$bgUrl}) no-repeat center /
     cover;
+  @media screen and (max-width: 450px) {
+    height: 200px;
+  }
 `;
 
 const Box = styled.div`
-  width: 250px;
+  word-break: break-all;
+  /* padding: 0 2%; */
+  width: 220px;
   height: 100%;
+  line-height: 64px;
   background-color: ${mainColor.blackColor};
   position: absolute;
   top: 0;
@@ -37,8 +45,18 @@ const Box = styled.div`
   display: flex;
   align-items: center;
   h3 {
+    width: 70%;
     font-size: ${baseFontSize.titleSize};
     font-weight: 700;
+  }
+  @media screen and (max-width: 450px) {
+    height: 100%;
+    width: 150px;
+    line-height: 40px;
+    h3 {
+      width: 80%;
+      font-size: 34px;
+    }
   }
 `;
 
@@ -53,6 +71,20 @@ const params = {
   },
   navigation: true,
   modules: [Autoplay, Pagination, Navigation],
+  breakpoints: {
+    1024: {
+      spaceBetween: 30,
+      slidesPerView: 5.5,
+    },
+    640: {
+      spaceBetween: 20,
+      slidesPerView: 4.2,
+    },
+    320: {
+      spaceBetween: 10,
+      slidesPerView: 3.2,
+    },
+  },
 };
 
 export const TrendList = ({ trendListData, titleName }) => {

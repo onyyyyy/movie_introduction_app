@@ -13,6 +13,10 @@ const Title = styled.h3`
   font-size: ${baseFontSize.titleSize};
   font-weight: 900;
   text-align: center;
+  @media screen and (max-width: 450px) {
+    font-size: 30px;
+    font-weight: 800;
+  }
 `;
 const Form = styled.form`
   all: unset;
@@ -25,6 +29,9 @@ const Form = styled.form`
   left: 50%;
   transform: translateX(-50%);
   margin-top: 50px;
+  @media screen and (max-width: 450px) {
+    width: 80%;
+  }
 `;
 const Input = styled.input`
   all: unset;
@@ -39,18 +46,28 @@ const ConWrap = styled.div`
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   column-gap: 40px;
-  row-gap: 40px;
+  row-gap: 30px;
+  @media screen and (max-width: 450px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
 `;
 const Con = styled.div``;
 const Bg = styled.div`
   height: 500px;
   background: url(${IMG_URL}/w500/${(props) => props.$bgUrl}) no-repeat center /
     cover;
+  @media screen and (max-width: 450px) {
+    height: 300px;
+  }
 `;
 const MoivieTitle = styled.div`
   margin-top: 20px;
   font-size: 26px;
   font-weight: 700;
+  @media screen and (max-width: 450px) {
+    margin-top: 10px;
+    font-size: 22px;
+  }
 `;
 
 export const Search = () => {
