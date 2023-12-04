@@ -8,7 +8,7 @@ export const mainColor = {
 
 export const baseFontSize = {
   baseSize: "16px",
-  movieTitleSize: "18px",
+  movieTitleSize: "20px",
   titleSize: "50px",
 };
 

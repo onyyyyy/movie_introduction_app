@@ -18,25 +18,30 @@ const Wrap = styled.div`
   }
 `;
 const Poster = styled.div`
-  width: 100%;
-  height: 500px;
+  width: 45%;
+  height: 600px;
   /* background-color: lightblue; */
   background: url(${IMG_URL}/w500/${(props) => props.$bg}) no-repeat center /
     cover;
 
   @media screen and (max-width: 450px) {
     margin: 30px 0;
+    width: 100%;
   }
 `;
 const ConWrap = styled.div`
-  width: 100%;
+  width: 45%;
+  height: 600px;
+  @media screen and (max-width: 450px) {
+    width: 100%;
+  }
 `;
 
 const TopWrap = styled.div``;
 const Title = styled.h3`
   font-size: ${baseFontSize.titleSize};
   font-weight: 600;
-  margin-bottom: 30px;
+  margin-bottom: 40px;
   @media screen and (max-width: 450px) {
     font-size: 30px;
     margin-bottom: 20px;
@@ -46,14 +51,14 @@ const TagLine = styled.h4`
   font-size: 22px;
   font-weight: 600;
   line-height: 24px;
-  margin-bottom: 40px;
+  margin-bottom: 50px;
   @media screen and (max-width: 450px) {
     font-size: 18px;
   }
 `;
 
 const MidWrap = styled.div`
-  margin-bottom: 20px;
+  margin-bottom: 40px;
   font-size: 18px;
   line-height: 26px;
 `;
@@ -65,7 +70,7 @@ const Grade = styled.div`
   background-color: white;
   color: #333;
   text-align: center;
-  margin: 10px;
+  margin: 20px 0;
   @media screen and (max-width: 450px) {
     line-height: 28px;
   }
@@ -78,11 +83,6 @@ const Summary = styled.p`
   @media screen and (max-width: 450px) {
     font-size: 16px;
   }
-`;
-const Line = styled.div`
-  width: 100%;
-  height: 2px;
-  background-color: lightgray;
 `;
 
 export const Detail = () => {
@@ -113,7 +113,7 @@ export const Detail = () => {
       <ConWrap>
         <TopWrap>
           <Title>{movieData.title}</Title>
-          <TagLine>"{movieData.tagline}"</TagLine>
+          <TagLine>{movieData.tagline}</TagLine>
           <MidWrap>
             <Grade>평점 : {Math.round(movieData.vote_average)}점</Grade>
             <Release>개봉일 : {movieData.release_date}</Release>
@@ -125,7 +125,6 @@ export const Detail = () => {
           </MidWrap>
           <Summary>{movieData.overview}</Summary>
         </TopWrap>
-        <Line></Line>
       </ConWrap>
     </Wrap>
   );

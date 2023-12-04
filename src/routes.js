@@ -4,4 +4,5 @@ export const routes = {
   search: "/search",
   trend: "/trend",
   topRatedPage: "/toprated",
+  list: "/list",
 };

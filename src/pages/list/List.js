@@ -1,46 +1,61 @@
 import styled from "styled-components";
 import { baseFontSize } from "../../style/GlobalStyled";
 import { IMG_URL } from "../../constants";
+import { Link, useLocation } from "react-router-dom";
+import { Layout } from "../../components/Layout";
 
-const Wrap = styled.div``;
+const Wrap = styled.div`
+  padding: 100px 5%;
+`;
 
 const Title = styled.h3`
   font-size: ${baseFontSize.titleSize};
   font-weight: 900;
+  margin-bottom: 50px;
 `;
 
 const ConWrap = styled.div`
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   column-gap: 50px;
-  row-gap: 50px;
+  row-gap: 80px;
 `;
 
-const Con = styled.div``;
+const Con = styled.div`
+  h4 {
+    font-size: ${baseFontSize.movieTitleSize};
+    font-weight: 700;
+    line-height: 24px;
+  }
+`;
 
 const Bg = styled.div`
-  height: 500px;
-  background: url(${IMG_URL}/w500/${(props) => props.$bgUrl}) no-repeat center /
+  height: 350px;
+  background: url(${IMG_URL}/w500/${(props) => props.$bg}) no-repeat center /
     cover;
+  margin-bottom: 10px;
 `;
 
-const MovieTitle = styled.div`
-  font-size: 20px;
-  font-weight: 600;
-`;
+export const List = () => {
+  const data = useLocation();
+  console.log(data);
 
-export const List = ({ listName, listData }) => {
   return (
-    <Wrap>
-      <Title>{listName}</Title>
-      <ConWrap>
-        {listData.map((data) => (
-          <Con>
-            <Bg $bgUrl={data.poster_path} />
-            <MovieTitle>{data.title}</MovieTitle>
-          </Con>
-        ))}
-      </ConWrap>
-    </Wrap>
+    <Layout>
+      <Wrap>
+        <Title>{data.state.title}</Title>
+
+        <ConWrap>
+          {data.state.listdata.map((movie) => (
+            <Con key={movie.id}>
+              <Link to={`/detail/${movie.id}`}>
+                <Bg $bg={movie.poster_path} />
+                <h4>{movie.title}</h4>
+              </Link>
+            </Con>
+          ))}
+        </ConWrap>
+      </Wrap>
+    </Layout>
   );
 };

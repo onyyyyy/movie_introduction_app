@@ -8,6 +8,7 @@ import { EffectCoverflow, Pagination } from "swiper/modules";
 import { IMG_URL } from "../../constants";
 import { Layout } from "../../components/Layout";
 import { baseFontSize } from "../../style/GlobalStyled";
+import { routes } from "../../routes";
 
 const Wrap = styled.div`
   margin-bottom: 80px;
@@ -63,6 +64,38 @@ const params = {
     slideShadows: true,
   },
   // pagination: true,
+  breakpoints: {
+    1024: {
+      slidesPerView: 5,
+      coverflowEffect: {
+        rotate: 70,
+        stretch: 0,
+        depth: 100,
+        modifier: 1,
+        slideShadows: true,
+      },
+    },
+    640: {
+      slidesPerView: 4,
+      coverflowEffect: {
+        rotate: 70,
+        stretch: 0,
+        depth: 80,
+        modifier: 1,
+        slideShadows: true,
+      },
+    },
+    320: {
+      slidesPerView: 3,
+      coverflowEffect: {
+        rotate: 70,
+        stretch: 0,
+        depth: 60,
+        modifier: 1,
+        slideShadows: true,
+      },
+    },
+  },
   modules: [EffectCoverflow, Pagination],
 };
 
@@ -73,7 +106,12 @@ export const TrendLayout = ({ titleName, trendListData }) => {
         <TitleWrap>
           <Title>{titleName}</Title>
           <BtnWrap>
-            <Link>+ 더 보기</Link>
+            <Link
+              to={routes.list}
+              state={{ listdata: trendListData, title: titleName }}
+            >
+              + 더 보기
+            </Link>
           </BtnWrap>
         </TitleWrap>
 

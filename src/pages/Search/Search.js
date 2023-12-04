@@ -71,11 +71,7 @@ const MoivieTitle = styled.div`
 `;
 
 export const Search = () => {
-  const {
-    register,
-    handleSubmit,
-    formState: { errors, isValid },
-  } = useForm({
+  const { register, handleSubmit } = useForm({
     mode: "onSubmit",
   });
 
@@ -97,14 +93,14 @@ export const Search = () => {
   console.log(word);
   return (
     <Wrap>
-      <Title>영화 제목을 검색해주세요!</Title>
+      <Title>찾으시는 영화가 있으신가요?</Title>
       <Form onSubmit={handleSubmit(SearchHandler)}>
         <Input
           {...register("search", {
             required: "검색어를 입력해주세요",
           })}
           type="text"
-          placeholder="찾으시는 영화가 있으신가요?"
+          placeholder="영화 제목을 검색해주세요!"
         />
       </Form>
 

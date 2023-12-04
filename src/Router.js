@@ -19,6 +19,7 @@ const Router = () => {
         <Route path={routes.detail} element={<Detail />} />
         <Route path={routes.search} element={<Search />} />
         <Route path={routes.trend} element={<Trend />} />
+        <Route path={routes.list} element={<List />} />
         <Route path={routes.topRatedPage} element={<TopRatedPage />} />
         <Route path="/*" element={<PageNotFound />} />
       </Routes>

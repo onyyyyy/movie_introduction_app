@@ -2,6 +2,8 @@ import { Link } from "react-router-dom";
 import { routes } from "../routes";
 import styled from "styled-components";
 import { baseFontSize, mainColor } from "../style/GlobalStyled";
+import { useEffect, useState } from "react";
+import { nowPlaying, upComing } from "../api";
 
 const HeaderWrap = styled.header`
   display: flex;
@@ -33,6 +35,9 @@ const Logo = styled.div`
   a {
     color: ${mainColor.pointColor};
   }
+  @media screen and (max-width: 450px) {
+    font-size: 20px;
+  }
 `;
 
 const Gnb = styled.ul`
@@ -42,13 +47,59 @@ const Gnb = styled.ul`
     font-size: ${baseFontSize.baseSize};
     font-weight: 500;
   }
+  @media screen and (max-width: 450px) {
+    display: none;
+  }
+`;
+
+const MoMenu = styled.div`
+  display: none;
+  /* @media screen and (max-width: 450px) {
+    display: block;
+  } */
+`;
+const Mbtn = styled.button`
+  all: unset;
+`;
+const Mgnb = styled.ul`
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50%;
+  height: 70vh;
+  background-color: rgba(255, 255, 255, 0.7);
+  a {
+    color: #333;
+    font-size: 30px;
+    font-weight: 900;
+  }
 `;
 
 const SideIcon = styled.div`
   font-size: ${baseFontSize.baseSize};
   font-weight: 500;
+  @media screen and (max-width: 450px) {
+    display: none;
+  }
 `;
 export const Header = () => {
+  const [nowPlayingData, setNowPlayingData] = useState();
+  const [upcomingData, setUpcomingData] = useState();
+
+  useEffect(() => {
+    (async () => {
+      try {
+        const { results: nowResults } = await nowPlaying();
+        setNowPlayingData(nowResults);
+
+        const { results: upcomingResults } = await upComing();
+        setUpcomingData(upcomingResults);
+      } catch (error) {
+        console.log("Error" + error);
+      }
+    })();
+  }, []);
+
   return (
     <HeaderWrap>
       <Sheader>
@@ -58,12 +109,18 @@ export const Header = () => {
           </Logo>
           <Gnb>
             <Link to={routes.trend}>
-              <li>인기영화</li>
+              <li>영화 트렌드</li>
             </Link>
-            <Link to={""}>
+            <Link
+              to={routes.list}
+              state={{ listdata: nowPlayingData, title: "현재 상영작" }}
+            >
               <li>현재 상영작</li>
             </Link>
-            <Link to={""}>
+            <Link
+              to={routes.list}
+              state={{ listdata: upcomingData, title: "상영 예정작" }}
+            >
               <li>상영 예정작</li>
             </Link>
           </Gnb>
@@ -72,6 +129,23 @@ export const Header = () => {
         <SideIcon>
           <Link to={routes.search}>검색</Link>
         </SideIcon>
+        <MoMenu>
+          <Mbtn>=</Mbtn>
+          <Mgnb>
+            <Link to={routes.trend}>
+              <li>인기영화</li>
+            </Link>
+            <Link to={""}>
+              <li>현재 상영작</li>
+            </Link>
+            <Link to={""}>
+              <li>상영 예정작</li>
+            </Link>
+            <Link to={routes.search}>
+              <li>검색</li>
+            </Link>
+          </Mgnb>
+        </MoMenu>
       </Sheader>
     </HeaderWrap>
   );
