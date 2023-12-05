@@ -52,36 +52,42 @@ const Gnb = styled.ul`
   }
 `;
 
-const MoMenu = styled.div`
-  display: none;
-  /* @media screen and (max-width: 450px) {
-    display: block;
-  } */
-`;
-const Mbtn = styled.button`
-  all: unset;
-`;
-const Mgnb = styled.ul`
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 50%;
-  height: 70vh;
-  background-color: rgba(255, 255, 255, 0.7);
-  a {
-    color: #333;
-    font-size: 30px;
-    font-weight: 900;
-  }
-`;
-
 const SideIcon = styled.div`
   font-size: ${baseFontSize.baseSize};
   font-weight: 500;
-  @media screen and (max-width: 450px) {
+  /* @media screen and (max-width: 450px) {
     display: none;
-  }
+  } */
 `;
+
+// const MoMenuWrap = styled.div`
+//   display: none;
+//   @media screen and (max-width: 450px) {
+//     display: block;
+//   }
+// `;
+// const MoBtn = styled.div`
+//   font-size: 20px;
+// `;
+// const Momenu = styled.ul`
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: center;
+//   align-items: center;
+//   position: absolute;
+//   top: 0;
+//   right: -100%;
+//   line-height: 50px;
+//   width: 100%;
+//   height: 70vh;
+//   background-color: rgba(0, 0, 0, 0.9);
+
+//   li {
+//     font-size: 20px;
+//     font-weight: 600;
+//   }
+// `;
+
 export const Header = () => {
   const headerRef = useRef();
   // console.log(headerRef);
@@ -106,6 +112,10 @@ export const Header = () => {
 
   const [nowPlayingData, setNowPlayingData] = useState();
   const [upcomingData, setUpcomingData] = useState();
+  // const [isOpen, setOpen] = useState(false);
+  // const toggleMenu = () => {
+  //   setOpen((isOpen) => !isOpen);
+  // };
 
   useEffect(() => {
     (async () => {
@@ -149,23 +159,29 @@ export const Header = () => {
       <SideIcon>
         <Link to={routes.search}>검색</Link>
       </SideIcon>
-      <MoMenu>
-        <Mbtn>=</Mbtn>
-        <Mgnb>
+      {/* <MoMenuWrap>
+        <MoBtn onClick={() => toggleMenu()}>=</MoBtn>
+        <Momenu className={isOpen ? "show-menu" : "hide-menu"}>
           <Link to={routes.trend}>
-            <li>인기영화</li>
+            <li>영화 트렌드</li>
           </Link>
-          <Link to={""}>
+          <Link
+            to={routes.list}
+            state={{ listdata: nowPlayingData, title: "현재 상영작" }}
+          >
             <li>현재 상영작</li>
           </Link>
-          <Link to={""}>
+          <Link
+            to={routes.list}
+            state={{ listdata: upcomingData, title: "상영 예정작" }}
+          >
             <li>상영 예정작</li>
           </Link>
           <Link to={routes.search}>
             <li>검색</li>
           </Link>
-        </Mgnb>
-      </MoMenu>
+        </Momenu>
+      </MoMenuWrap> */}
     </Sheader>
   );
 };

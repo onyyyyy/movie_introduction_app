@@ -50,6 +50,7 @@ const PosterTitle = styled.h4`
   @media screen and (max-width: 450px) {
     font-size: 22px;
     margin-top: 10px;
+    line-height: 24px;
   }
 `;
 

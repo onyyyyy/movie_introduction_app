@@ -7,12 +7,18 @@ import { useScrollTop } from "../../lib/useScrollTop";
 
 const Wrap = styled.div`
   padding: 100px 5%;
+  @media screen and (max-width: 450px) {
+    padding: 50px 5%;
+  }
 `;
 
 const Title = styled.h3`
   font-size: ${baseFontSize.titleSize};
   font-weight: 900;
   margin-bottom: 50px;
+  @media screen and (max-width: 450px) {
+    font-size: 30px;
+  }
 `;
 
 const ConWrap = styled.div`
@@ -20,6 +26,11 @@ const ConWrap = styled.div`
   grid-template-columns: repeat(5, 1fr);
   column-gap: 50px;
   row-gap: 80px;
+  @media screen and (max-width: 450px) {
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 30px;
+    row-gap: 50px;
+  }
 `;
 
 const Con = styled.div`
@@ -28,6 +39,11 @@ const Con = styled.div`
     font-weight: 700;
     line-height: 24px;
   }
+  @media screen and (max-width: 450px) {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 20px;
+  }
 `;
 
 const Bg = styled.div`
@@ -35,6 +51,9 @@ const Bg = styled.div`
   background: url(${IMG_URL}/w500/${(props) => props.$bg}) no-repeat center /
     cover;
   margin-bottom: 10px;
+  @media screen and (max-width: 450px) {
+    height: 200px;
+  }
 `;
 
 export const List = () => {

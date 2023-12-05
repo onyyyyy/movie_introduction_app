@@ -80,7 +80,7 @@ export const Search = () => {
   const [word, setWord] = useState();
 
   const SearchHandler = async (data) => {
-    console.log(data);
+    // console.log(data);
     const { search: keyword } = data;
 
     try {

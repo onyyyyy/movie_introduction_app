@@ -31,6 +31,12 @@ const Poster = styled.div`
 const MovieTitle = styled.h4`
   margin-top: 20px;
   font-size: ${baseFontSize.movieTitleSize};
+  @media screen and (max-width: 450px) {
+    margin-top: 10px;
+    font-size: 16px;
+    line-height: 20px;
+    font-weight: 500;
+  }
 `;
 
 const params = {

@@ -12,18 +12,28 @@ import { routes } from "../../routes";
 
 const Wrap = styled.div`
   margin-bottom: 80px;
+  @media screen and (max-width: 450px) {
+    margin-bottom: 50px;
+  }
 `;
 
 const TitleWrap = styled.div`
   display: flex;
   align-items: end;
   margin-bottom: 80px;
+  @media screen and (max-width: 450px) {
+    margin-bottom: 60px;
+  }
 `;
 
 const Title = styled.div`
   font-size: ${baseFontSize.titleSize};
   font-weight: 900;
   margin-right: 50px;
+  @media screen and (max-width: 450px) {
+    font-size: 30px;
+    margin-right: 30px;
+  }
 `;
 
 const BtnWrap = styled.button`
@@ -41,6 +51,14 @@ const BtnWrap = styled.button`
     color: #333;
     font-size: ${baseFontSize.baseSize};
     font-weight: 600;
+  }
+  @media screen and (max-width: 450px) {
+    width: 80px;
+    height: 25px;
+    line-height: 25px;
+    a {
+      font-size: 14px;
+    }
   }
 `;
 
@@ -78,9 +96,19 @@ const params = {
     640: {
       slidesPerView: 4,
       coverflowEffect: {
-        rotate: 70,
+        rotate: 50,
         stretch: 0,
-        depth: 80,
+        depth: 100,
+        modifier: 1,
+        slideShadows: true,
+      },
+    },
+    450: {
+      slidesPerView: 4,
+      coverflowEffect: {
+        rotate: 40,
+        stretch: 0,
+        depth: 50,
         modifier: 1,
         slideShadows: true,
       },
@@ -88,7 +116,7 @@ const params = {
     320: {
       slidesPerView: 3,
       coverflowEffect: {
-        rotate: 70,
+        rotate: 50,
         stretch: 0,
         depth: 60,
         modifier: 1,
