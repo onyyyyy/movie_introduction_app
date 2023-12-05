@@ -6,6 +6,7 @@ import { baseFontSize } from "../../style/GlobalStyled";
 import { IMG_URL } from "../../constants";
 import { Layout } from "../../components/Layout";
 import { useScrollTop } from "../../lib/useScrollTop";
+import { useLocation } from "react-router-dom";
 
 const Wrap = styled.div`
   padding: 100px 5%;
@@ -78,6 +79,9 @@ export const Search = () => {
   });
 
   const [word, setWord] = useState();
+  const baSearch = useLocation();
+  // console.log(baSearch.state.key);
+  // const nameKey = baSearch.state.key;
 
   const SearchHandler = async (data) => {
     // console.log(data);

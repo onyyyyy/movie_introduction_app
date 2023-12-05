@@ -3,7 +3,9 @@ import { IMG_URL } from "../../constants";
 import { useForm } from "react-hook-form";
 import { ErrorMessage } from "../../components/ErrorMessage";
 import { movieSearch } from "../../api";
-import { useState } from "react";
+import { useRef, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { routes } from "../../routes";
 
 const MainBanner = styled.div`
   height: 80vh;
@@ -54,25 +56,17 @@ export const Banner = ({ bannerData }) => {
   const {
     register,
     handleSubmit,
-    formState: { errors, isVaild },
+    formState: { errors },
   } = useForm({
     mode: "onSubmit",
   });
 
   const [word, setWord] = useState();
+  const navigate = useNavigate();
 
-  const SearchHandler = async (data) => {
-    console.log(data);
+  const SearchHandler = (data) => {
     const { search: keyword } = data;
-
-    try {
-      const { results } = await movieSearch(keyword);
-      setWord(results);
-    } catch (error) {
-      console.log("Error" + error);
-    }
-
-    console.log(word);
+    navigate(routes.search, { state: { key: keyword } });
   };
   return (
     <MainBanner $bgUrl={bannerData.backdrop_path}>
