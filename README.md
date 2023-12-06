@@ -1,24 +1,11 @@
-## 설치항목
+로고 의미
 
-[x] react-router-dom
-[x] node-fetch@2 --save
-[x] styled-components
-[x] styled-reset
-[] font-awesome
-[x] react-helmet-async
-[] react-hook-form
-[] swiper
+- ‘(Turn) On 켜다’ + ‘Movie 영화’ 단어 결합으로 많은 유저들이 다양한 영화에 관심을 가졌으면 하는 의미와 영화가 많은 의미로 밝게 빛이 났으면 하는 뜻
 
-## TODO
+제작의도
 
-[x] component 생성
-[x] router 연결
-[] api 기본세팅
-[x] header 디자인
-[x] footer 디자인
-[x] loading page 디자인
-[] Home ui 및 전체 구성
-[] Detail ui 및 전체 구성
-[] Search ui 및 전체 구성
-[] TopRatedPage ui 및 전체 구성
-[] PageNotFound ui 및 전체 구성
+- 유저들이 원하는 영화의 평점, 장르, 안내해주기 위해 제작
+
+서비스 목표
+
+- 유저들이 원하는 영화뿐만 아니라 다양한 장르들을 접해 영화의 선택의 폭이 넓어짐

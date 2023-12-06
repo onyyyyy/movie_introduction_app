@@ -38,6 +38,10 @@ const Logo = styled.div`
   @media screen and (max-width: 1024px) {
     margin-right: 60px;
   }
+  @media screen and (max-width: 768px) {
+    font-size: 20px;
+    margin-right: 30px;
+  }
 
   @media screen and (max-width: 450px) {
     font-size: 20px;
