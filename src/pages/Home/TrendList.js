@@ -13,6 +13,9 @@ const Wrap = styled.div`
   /* display: flex;
   align-items: center;
   justify-content: space-between; */
+  @media screen and (max-width: 768px) {
+    height: 250px;
+  }
   @media screen and (max-width: 450px) {
     height: 200px;
   }
@@ -26,6 +29,9 @@ const Con = styled.div`
   /* background-color: lightgray; */
   background: url(${IMG_URL}/w500/${(props) => props.$bgUrl}) no-repeat center /
     cover;
+  @media screen and (max-width: 768px) {
+    height: 250px;
+  }
   @media screen and (max-width: 450px) {
     height: 200px;
   }
@@ -49,6 +55,16 @@ const Box = styled.div`
     font-size: ${baseFontSize.titleSize};
     font-weight: 700;
   }
+  @media screen and (max-width: 768px) {
+    height: 100%;
+    width: 170px;
+    line-height: 50px;
+    h3 {
+      width: 80%;
+      font-size: 46px;
+    }
+  }
+
   @media screen and (max-width: 450px) {
     height: 100%;
     width: 150px;

@@ -13,7 +13,11 @@ const Wrap = styled.div`
   padding: 200px 20%;
   justify-content: space-between;
   align-items: center;
-  @media screen and (max-width: 450px) {
+  @media screen and (max-width: 1024px) {
+    padding: 200px 15%;
+  }
+
+  @media screen and (max-width: 768px) {
     display: block;
     padding: 100px 10%;
   }
@@ -25,7 +29,7 @@ const Poster = styled.div`
   background: url(${IMG_URL}/w500/${(props) => props.$bg}) no-repeat center /
     cover;
 
-  @media screen and (max-width: 450px) {
+  @media screen and (max-width: 768px) {
     margin: 30px 0;
     width: 100%;
   }
@@ -33,7 +37,7 @@ const Poster = styled.div`
 const ConWrap = styled.div`
   width: 45%;
   height: 600px;
-  @media screen and (max-width: 450px) {
+  @media screen and (max-width: 768px) {
     width: 100%;
   }
 `;
@@ -43,6 +47,14 @@ const Title = styled.h3`
   font-size: ${baseFontSize.titleSize};
   font-weight: 600;
   margin-bottom: 40px;
+  @media screen and (max-width: 1024px) {
+    font-size: 40px;
+    margin-bottom: 30px;
+  }
+  @media screen and (max-width: 768px) {
+    font-size: 34px;
+    margin-bottom: 30px;
+  }
   @media screen and (max-width: 450px) {
     font-size: 30px;
     margin-bottom: 20px;
@@ -53,8 +65,9 @@ const TagLine = styled.h4`
   font-weight: 600;
   line-height: 24px;
   margin-bottom: 50px;
-  @media screen and (max-width: 450px) {
+  @media screen and (max-width: 1024px) {
     font-size: 18px;
+    margin-bottom: 40px;
   }
 `;
 
@@ -81,7 +94,7 @@ const Genre = styled.div``;
 const Summary = styled.p`
   font-size: 18px;
   line-height: 24px;
-  @media screen and (max-width: 450px) {
+  @media screen and (max-width: 1024px) {
     font-size: 16px;
   }
 `;
@@ -104,7 +117,7 @@ export const Detail = () => {
     })();
   }, [id]);
 
-  console.log(movieData);
+  // console.log(movieData);
 
   return isLoading ? (
     <Loading />

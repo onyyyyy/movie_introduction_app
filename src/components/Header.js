@@ -35,6 +35,10 @@ const Logo = styled.div`
   a {
     color: ${mainColor.pointColor};
   }
+  @media screen and (max-width: 1024px) {
+    margin-right: 60px;
+  }
+
   @media screen and (max-width: 450px) {
     font-size: 20px;
   }
@@ -47,6 +51,18 @@ const Gnb = styled.ul`
     font-size: ${baseFontSize.baseSize};
     font-weight: 500;
   }
+  @media screen and (max-width: 1024px) {
+    li {
+      margin-right: 30px;
+    }
+  }
+  @media screen and (max-width: 768px) {
+    li {
+      font-size: 14px;
+      margin-right: 20px;
+    }
+  }
+
   @media screen and (max-width: 450px) {
     display: none;
   }
@@ -55,42 +71,10 @@ const Gnb = styled.ul`
 const SideIcon = styled.div`
   font-size: ${baseFontSize.baseSize};
   font-weight: 500;
-  /* @media screen and (max-width: 450px) {
-    display: none;
-  } */
 `;
-
-// const MoMenuWrap = styled.div`
-//   display: none;
-//   @media screen and (max-width: 450px) {
-//     display: block;
-//   }
-// `;
-// const MoBtn = styled.div`
-//   font-size: 20px;
-// `;
-// const Momenu = styled.ul`
-//   display: flex;
-//   flex-direction: column;
-//   justify-content: center;
-//   align-items: center;
-//   position: absolute;
-//   top: 0;
-//   right: -100%;
-//   line-height: 50px;
-//   width: 100%;
-//   height: 70vh;
-//   background-color: rgba(0, 0, 0, 0.9);
-
-//   li {
-//     font-size: 20px;
-//     font-weight: 600;
-//   }
-// `;
 
 export const Header = () => {
   const headerRef = useRef();
-  // console.log(headerRef);
 
   const scrollHandler = () => {
     const pageY = window.scrollY;
@@ -112,10 +96,6 @@ export const Header = () => {
 
   const [nowPlayingData, setNowPlayingData] = useState();
   const [upcomingData, setUpcomingData] = useState();
-  // const [isOpen, setOpen] = useState(false);
-  // const toggleMenu = () => {
-  //   setOpen((isOpen) => !isOpen);
-  // };
 
   useEffect(() => {
     (async () => {
@@ -159,29 +139,6 @@ export const Header = () => {
       <SideIcon>
         <Link to={routes.search}>검색</Link>
       </SideIcon>
-      {/* <MoMenuWrap>
-        <MoBtn onClick={() => toggleMenu()}>=</MoBtn>
-        <Momenu className={isOpen ? "show-menu" : "hide-menu"}>
-          <Link to={routes.trend}>
-            <li>영화 트렌드</li>
-          </Link>
-          <Link
-            to={routes.list}
-            state={{ listdata: nowPlayingData, title: "현재 상영작" }}
-          >
-            <li>현재 상영작</li>
-          </Link>
-          <Link
-            to={routes.list}
-            state={{ listdata: upcomingData, title: "상영 예정작" }}
-          >
-            <li>상영 예정작</li>
-          </Link>
-          <Link to={routes.search}>
-            <li>검색</li>
-          </Link>
-        </Momenu>
-      </MoMenuWrap> */}
     </Sheader>
   );
 };

@@ -6,7 +6,7 @@ import { baseFontSize } from "../../style/GlobalStyled";
 import { IMG_URL } from "../../constants";
 import { Layout } from "../../components/Layout";
 import { useScrollTop } from "../../lib/useScrollTop";
-import { useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 const Wrap = styled.div`
   padding: 100px 5%;
@@ -15,9 +15,12 @@ const Title = styled.h3`
   font-size: ${baseFontSize.titleSize};
   font-weight: 900;
   text-align: center;
-  @media screen and (max-width: 450px) {
-    font-size: 30px;
+  @media screen and (max-width: 1024px) {
+    font-size: 40px;
     font-weight: 800;
+  }
+  @media screen and (max-width: 768px) {
+    font-size: 30px;
   }
 `;
 const Form = styled.form`
@@ -31,7 +34,7 @@ const Form = styled.form`
   left: 50%;
   transform: translateX(-50%);
   margin-top: 50px;
-  @media screen and (max-width: 450px) {
+  @media screen and (max-width: 1024px) {
     width: 80%;
   }
 `;
@@ -49,7 +52,10 @@ const ConWrap = styled.div`
   grid-template-columns: repeat(4, 1fr);
   column-gap: 40px;
   row-gap: 30px;
-  @media screen and (max-width: 450px) {
+  @media screen and (max-width: 1024px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  @media screen and (max-width: 768px) {
     grid-template-columns: repeat(2, 1fr);
   }
 `;
@@ -58,7 +64,10 @@ const Bg = styled.div`
   height: 500px;
   background: url(${IMG_URL}/w500/${(props) => props.$bgUrl}) no-repeat center /
     cover;
-  @media screen and (max-width: 450px) {
+  @media screen and (max-width: 1024px) {
+    height: 400px;
+  }
+  @media screen and (max-width: 768px) {
     height: 300px;
   }
 `;
@@ -66,9 +75,15 @@ const MoivieTitle = styled.div`
   margin-top: 20px;
   font-size: 26px;
   font-weight: 700;
-  @media screen and (max-width: 450px) {
+  @media screen and (max-width: 1024px) {
     margin-top: 10px;
-    font-size: 22px;
+    font-size: 24px;
+    line-height: 26px;
+  }
+  @media screen and (max-width: 768px) {
+    margin-top: 10px;
+    font-size: 20px;
+    line-height: 24px;
   }
 `;
 
@@ -79,9 +94,8 @@ export const Search = () => {
   });
 
   const [word, setWord] = useState();
-  const baSearch = useLocation();
-  // console.log(baSearch.state.key);
-  // const nameKey = baSearch.state.key;
+  // const baSearch = useLocation();
+  // console.log(baSearch);
 
   const SearchHandler = async (data) => {
     // console.log(data);
@@ -96,7 +110,7 @@ export const Search = () => {
     }
   };
 
-  console.log(word);
+  // console.log(word);
   return (
     <Wrap>
       <Title>찾으시는 영화가 있으신가요?</Title>
@@ -115,8 +129,10 @@ export const Search = () => {
           <ConWrap>
             {word.map((data) => (
               <Con key={data.id}>
-                <Bg $bgUrl={data.poster_path} />
-                <MoivieTitle>{data.title}</MoivieTitle>
+                <Link to={`/detail/${data.id}`}>
+                  <Bg $bgUrl={data.poster_path} />
+                  <MoivieTitle>{data.title}</MoivieTitle>
+                </Link>
               </Con>
             ))}
           </ConWrap>

@@ -24,6 +24,9 @@ const Poster = styled.div`
   background-color: aliceblue;
   background: url(${IMG_URL}/w500/${(props) => props.$bgUrl}) no-repeat center /
     cover;
+  @media screen and (max-width: 768px) {
+    height: 300px;
+  }
   @media screen and (max-width: 450px) {
     height: 200px;
   }

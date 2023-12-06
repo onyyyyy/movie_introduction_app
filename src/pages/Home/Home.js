@@ -77,7 +77,7 @@ export const Home = () => {
           {nowPlayingData && (
             <>
               <PageTitle titleName={"Home"} />
-              <Banner bannerData={nowPlayingData[0]} />
+              <Banner bannerData={nowPlayingData} />
               <Layout>
                 <TopRated topData={topRatedData} />
                 <MovieList

@@ -26,6 +26,12 @@ const ConWrap = styled.div`
   grid-template-columns: repeat(5, 1fr);
   column-gap: 50px;
   row-gap: 80px;
+  @media screen and (max-width: 1024px) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  @media screen and (max-width: 768px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
   @media screen and (max-width: 450px) {
     grid-template-columns: repeat(2, 1fr);
     column-gap: 30px;
@@ -39,6 +45,7 @@ const Con = styled.div`
     font-weight: 700;
     line-height: 24px;
   }
+
   @media screen and (max-width: 450px) {
     font-size: 16px;
     font-weight: 600;
@@ -51,6 +58,9 @@ const Bg = styled.div`
   background: url(${IMG_URL}/w500/${(props) => props.$bg}) no-repeat center /
     cover;
   margin-bottom: 10px;
+  @media screen and (max-width: 1024px) {
+    height: 300px;
+  }
   @media screen and (max-width: 450px) {
     height: 200px;
   }

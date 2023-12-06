@@ -36,7 +36,7 @@ export const Trend = () => {
   }, []);
 
   // console.log(dayTrendData);
-  console.log(weekTrendData);
+  // console.log(weekTrendData);
 
   return (
     <>
