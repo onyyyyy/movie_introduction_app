@@ -18,10 +18,10 @@ const Title = styled.h3`
   font-size: 80px;
   font-weight: 900;
   @media screen and (max-width: 768px) {
-    font-size: 60px;
+    font-size: 40px;
   }
   @media screen and (max-width: 450px) {
-    font-size: 50px;
+    font-size: 30px;
   }
 `;
 const Container = styled.div`
@@ -35,8 +35,7 @@ const Container = styled.div`
   @media screen and (max-width: 450px) {
     flex-direction: column;
     align-items: center;
-    margin-top: 50px;
-    margin-bottom: 30px;
+    margin: 30px 0 20px 0;
   }
 `;
 const ConWarp = styled.div`
@@ -48,7 +47,7 @@ const ConWarp = styled.div`
     font-weight: 600;
   }
   @media screen and (max-width: 768px) {
-    margin: 60px 0 40px 0;
+    margin-bottom: 20px;
     h4 {
       font-size: 20px;
     }
