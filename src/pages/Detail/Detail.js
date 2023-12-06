@@ -36,7 +36,7 @@ const Poster = styled.div`
 `;
 const ConWrap = styled.div`
   width: 45%;
-  height: 600px;
+  /* height: 600px; */
   @media screen and (max-width: 768px) {
     width: 100%;
   }

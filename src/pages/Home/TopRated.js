@@ -41,6 +41,7 @@ const Container = styled.div`
 `;
 const ConWarp = styled.div`
   width: 30%;
+
   h4 {
     margin-top: 20px;
     font-size: 30px;
@@ -67,6 +68,11 @@ const Con = styled.div`
   /* background-color: lightcoral; */
   background: url(${IMG_URL}/w500/${(props) => props.$bgUrl}) no-repeat center /
     cover;
+  transition-duration: 0.5s;
+  &:hover {
+    transform: translateY(-20px);
+  }
+
   @media screen and (max-width: 768px) {
     height: 300px;
   }
