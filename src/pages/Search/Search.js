@@ -22,6 +22,13 @@ const Title = styled.h3`
   @media screen and (max-width: 768px) {
     font-size: 30px;
   }
+  @media screen and (max-width: 450px) {
+    width: 55%;
+
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+  }
 `;
 const Form = styled.form`
   all: unset;
@@ -36,6 +43,9 @@ const Form = styled.form`
   margin-top: 50px;
   @media screen and (max-width: 1024px) {
     width: 80%;
+  }
+  @media screen and (max-width: 768px) {
+    width: 100%;
   }
 `;
 const Input = styled.input`
@@ -52,11 +62,14 @@ const ConWrap = styled.div`
   grid-template-columns: repeat(4, 1fr);
   column-gap: 40px;
   row-gap: 30px;
+  padding: 100px 0;
   @media screen and (max-width: 1024px) {
     grid-template-columns: repeat(3, 1fr);
   }
   @media screen and (max-width: 768px) {
     grid-template-columns: repeat(2, 1fr);
+    column-gap: 20px;
+    padding: 50px 0;
   }
 `;
 const Con = styled.div``;
@@ -124,20 +137,18 @@ export const Search = () => {
         />
       </Form>
 
-      <Layout>
-        {word && (
-          <ConWrap>
-            {word.map((data) => (
-              <Con key={data.id}>
-                <Link to={`/detail/${data.id}`}>
-                  <Bg $bgUrl={data.poster_path} />
-                  <MoivieTitle>{data.title}</MoivieTitle>
-                </Link>
-              </Con>
-            ))}
-          </ConWrap>
-        )}
-      </Layout>
+      {word && (
+        <ConWrap>
+          {word.map((data) => (
+            <Con key={data.id}>
+              <Link to={`/detail/${data.id}`}>
+                <Bg $bgUrl={data.poster_path} />
+                <MoivieTitle>{data.title}</MoivieTitle>
+              </Link>
+            </Con>
+          ))}
+        </ConWrap>
+      )}
     </Wrap>
   );
 };
