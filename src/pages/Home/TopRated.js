@@ -21,7 +21,7 @@ const Title = styled.h3`
     font-size: 40px;
   }
   @media screen and (max-width: 450px) {
-    font-size: 30px;
+    font-size: 40px;
   }
 `;
 const Container = styled.div`
@@ -53,11 +53,12 @@ const ConWarp = styled.div`
     }
   }
   @media screen and (max-width: 450px) {
-    width: 90%;
+    width: 100%;
     margin-bottom: 30px;
     h4 {
       margin-top: 10px;
       font-size: 24px;
+      text-align: center;
     }
   }
 `;
@@ -77,6 +78,10 @@ const Con = styled.div`
   }
   @media screen and (max-width: 450px) {
     height: 400px;
+    margin: 15px 0;
+    &:hover {
+      transform: translateY(0px);
+    }
   }
   /* &:first-child {
     background: url(${IMG_URL}/w500/${(props) => props.$bgUrl1}) no-repeat
@@ -95,9 +100,18 @@ const Con = styled.div`
 `;
 const ViewBtn = styled.button`
   all: unset;
-  padding: 15px 20px;
+  width: 150px;
+  height: 50px;
+  line-height: 50px;
+  /* padding: 15px 20px; */
   background-color: #808080;
   border-radius: 30px;
+  text-align: center;
+  a {
+    display: block;
+    height: 100%;
+    width: 100%;
+  }
 `;
 
 export const TopRated = ({ topData }) => {

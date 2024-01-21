@@ -18,6 +18,10 @@ const Title = styled.h3`
   font-size: ${baseFontSize.titleSize};
   font-weight: 700;
   margin-bottom: 50px;
+  @media screen and (max-width: 450px) {
+    font-size: 40px;
+    margin-bottom: 30px;
+  }
 `;
 const Poster = styled.div`
   height: 400px;
@@ -57,7 +61,7 @@ const params = {
     },
     320: {
       spaceBetween: 10,
-      slidesPerView: 2.8,
+      slidesPerView: 2.4,
     },
   },
 };

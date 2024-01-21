@@ -17,7 +17,8 @@ const Wrap = styled.div`
     height: 250px;
   }
   @media screen and (max-width: 450px) {
-    height: 200px;
+    height: 300px;
+    margin-bottom: 50px;
   }
 `;
 
@@ -66,9 +67,7 @@ const Box = styled.div`
   }
 
   @media screen and (max-width: 450px) {
-    height: 100%;
-    width: 150px;
-    line-height: 40px;
+    display: none;
     h3 {
       width: 80%;
       font-size: 34px;
@@ -76,6 +75,15 @@ const Box = styled.div`
   }
 `;
 
+const Title = styled.div`
+  display: none;
+  @media screen and (max-width: 450px) {
+    display: flex;
+    font-size: 40px;
+    font-weight: 700;
+    margin-bottom: 20px;
+  }
+`;
 const params = {
   spaceBetween: 30,
   slidesPerView: 5.5,
@@ -98,7 +106,7 @@ const params = {
     },
     320: {
       spaceBetween: 10,
-      slidesPerView: 3.2,
+      slidesPerView: 2.4,
     },
   },
 };
@@ -106,6 +114,9 @@ const params = {
 export const TrendList = ({ trendListData, titleName }) => {
   return (
     <Wrap>
+      <Title>
+        <h3>{titleName}</h3>
+      </Title>
       <Swiper {...params}>
         {trendListData.map((data) => (
           <SwiperSlide key={data.id}>
