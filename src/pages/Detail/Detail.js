@@ -19,7 +19,7 @@ const Wrap = styled.div`
 
   @media screen and (max-width: 768px) {
     display: block;
-    padding: 100px 10%;
+    padding: 100px 5%;
   }
 `;
 const Poster = styled.div`
